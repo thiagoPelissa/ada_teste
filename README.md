@@ -41,14 +41,20 @@ http://localhost:5001/docs
 
 
 <b>OBS:</b> O projeto FRONT não funcionou assim que baixei, tive que fazer as duas alterações abaixo para funcionar. 
+<br>
 1 - Adicionei o arquivo .env com a config abaixo, pois estava dando conflito na versão do webpack.
 SKIP_PREFLIGHT_CHECK=true
-
+<br>
 2 - instalei lib tls conforme mostrado acima em `Como Rodar`
 ```
 nvm install --lts
 ```
 
+
+# Testes Unitarios
+### <li>Como Rodar</li>
+> cd BACKEND<br>
+> npm run test
 
 # Consideracoes
 
