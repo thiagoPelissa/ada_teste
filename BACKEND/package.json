@@ -1,0 +1,37 @@
+{
+    "name": "test_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "config": {
+        "entrypoint": "server/server.js"
+    },
+    "scripts": {
+        "build": "rimraf ./build && tsc",
+        "start": "npm run build && node build/$npm_package_config_entrypoint",
+        "dev": "npm run build && nodemon build/$npm_package_config_entrypoint",
+        "lint": "eslint"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.14.2",
+        "jsonwebtoken": "^8.5.1",
+        "mysql2": "^2.3.3",
+        "node-editorconfig": "^1.2.3",
+        "sequelize": "^6.21.3",
+        "typescript": "^4.7.4",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.33.1",
+        "@typescript-eslint/parser": "^5.33.1",
+        "eslint": "^8.22.0",
+        "eslint-plugin-react": "^7.30.1",
+        "nodemon": "^2.0.7"
+    }
+}

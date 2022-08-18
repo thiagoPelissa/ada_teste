@@ -1,0 +1,11 @@
+{
+    "jwt_secret": "4ee01ac6a4e44dfaa182e92abbad7f79",
+    "default_login": "letscode",
+    "default_password": "lets@123",
+    "database_name": "ada_db",
+    "database_user": "root",
+    "database_pass": "secret",
+    "database_host": "127.0.0.1",
+    "database_port": "3307",
+    "database_dialect": "mysql"
+}
