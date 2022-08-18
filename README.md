@@ -1,5 +1,5 @@
 # Backend archtecture
-Projeto desenvolvido com foco no desenvolvimento NodeJS utilizando o padrão de arquitetura `Hexagonal`
+Projeto desenvolvido com foco no desenvolvimento NodeJS utilizando o padrão de arquitetura `Hexagonal`.
 <br>
 <b>Nome:</b> `Thiago Pellizzari`
 
@@ -15,19 +15,28 @@ O banco utilizado foi o Mysql,rodando em um container separadamente.
 
 
 # BACKEND
+
 ### <li>Como Rodar</li>
-> cd BACKEND
-<br>
-> npm install
-<br>
-> npm run server
+> cd BACKEND<br>
+> npm install<br>
+> npm run start
+
+## Documentacao Swagger
+Para facilitar a visualizacao do Backend, foi adicionado a documentacao da API via Swagger.
+### <li>Como Rodar</li>
+Com o backend rodando basta acessar o caminho abaixo <br>
+```
+http://localhost:5001/docs
+```
+<b>OBS</b> É importante notar que todos os endpoints precisam estar authenticados, portanto, para utilizar qualquer endpoint primeiro precisamos authenticar, utilizando o endpoint `/Login` feito isso basta pegar o retorno do token e inserir em `Authorize` que todos os outros endpoins irão funcionar.
 
 
 # FRONT
 ### <li>Como Rodar</li>
 
-> cd FRONT
-<br>
+> cd FRONT<br>
+> yarn<br>
+> nvm install --lts<br>
 > yarn start
 
 
@@ -35,7 +44,7 @@ O banco utilizado foi o Mysql,rodando em um container separadamente.
 1 - Adicionei o arquivo .env com a config abaixo, pois estava dando conflito na versão do webpack.
 SKIP_PREFLIGHT_CHECK=true
 
-2 - instalei lib tls abaixo
+2 - instalei lib tls conforme mostrado acima em `Como Rodar`
 ```
 nvm install --lts
 ```
