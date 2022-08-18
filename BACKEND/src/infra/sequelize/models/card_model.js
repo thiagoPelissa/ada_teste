@@ -39,10 +39,17 @@ const get = async (id) => {
 }
 
 const remove = async (id) => {
-    await Card.destroy({
+    const result = await Card.destroy({
         where: { id: id }
+    }).then(res => {
+        console.log(res)
+        return get();
+    }).catch((error) => {
+        console.error(error)
+        return null;
     });
-    return await get();
+
+    return result
 }
 
 const insert = async (id, title, content, list) => {
@@ -55,7 +62,7 @@ const insert = async (id, title, content, list) => {
             updatedAt: new Date(),
             createdAt: new Date()
         }).then(res => {
-            console.log(res)
+
             resolve(res);
         }).catch((error) => {
             console.error('Failed to create a new record: ', error);
@@ -72,8 +79,6 @@ const insert = async (id, title, content, list) => {
 
 const update = async (id, title, content, list) => {
 
-    console.log(`Type of id: ${typeof id} - id: ${id}`);
-
     const result = await new Promise((resolve) => {
         Card.update({
             title: title,
@@ -81,7 +86,7 @@ const update = async (id, title, content, list) => {
             list: list,
             updatedAt: new Date()
         }, {
-            where: {id: id}
+            where: { id: id }
         }).then(res => {
             resolve(res);
         }

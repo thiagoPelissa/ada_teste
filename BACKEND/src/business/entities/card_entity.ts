@@ -1,18 +1,11 @@
 const card_model = require('../../infra/sequelize/models/card_model');
 const cardViewModel = require('../../server/view_models/card_view_model').CardViewModel;
 const mapper = require('../../server/mapper/card_mapper');
+const chalk = require('chalk');
+import { ICardEntity } from '../interfaces/entities/card_entity_interface';
 
-
-//TODO implemntar regras de negocios como exemplo
 
 export module EntityModule {
-    export interface ICardEntity {
-        insert();
-        get();
-        update();
-        remove(id: string);
-    }
-
     export class CardEntity implements ICardEntity {
         id: string;
         title: string;
@@ -51,10 +44,21 @@ export module EntityModule {
                 return result
             }
             catch (err) {
-                console.log(err)
+                console.error(err)
                 throw new Error(err)
             }
+        }
 
+        async getById(id) {
+            try {
+                const card = await card_model.get(id);
+                const result = new mapper.CardMapper(card).modelToViewModel()
+                return result
+            }
+            catch (err) {
+                console.error(err)
+                throw new Error(err)
+            }
         }
 
         async insert() {
@@ -70,7 +74,7 @@ export module EntityModule {
                 return result
             }
             catch (err) {
-                console.log(err)
+                console.error(err)
                 throw new Error(err)
             }
         };
@@ -108,7 +112,7 @@ export module EntityModule {
                 return result
             }
             catch (err) {
-                console.log(err)
+                console.error(err)
                 throw new Error(err)
             }
         };

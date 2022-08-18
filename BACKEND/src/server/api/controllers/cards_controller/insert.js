@@ -15,7 +15,7 @@ const fn = async (req, res) => {
 
         res.status(201).json(card);
     } catch (err) {
-        console.log(`Error on insert Card: ${err.message}`);
+        console.error(`Error on insert Card: ${err.message}`);
         return res.status(400).json({ message: 'Bad Request Error' });
     }
 };

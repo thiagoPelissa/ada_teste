@@ -10,5 +10,6 @@ const config = {
     DATABASE_HOST: process.env.DATABASE_HOST || localConfig.database_host,
     DATABASE_PORT: process.env.DATABASE_PORT || localConfig.database_port,
     DATABASE_DIALECT: process.env.DATABASE_DIALECT || localConfig.database_dialect,
+    ENVIRONMENT: process.env.ENVIRONMENT || localConfig.environment,
 };
 module.exports = config;

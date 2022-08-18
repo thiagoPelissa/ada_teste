@@ -1,0 +1,221 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cards API",
+        "version": "1.0.0",
+        "description": "Documentation from Cards API",
+        "termsOfService": "http://example.com/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.exmaple.com/support",
+            "email": "support@example.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5001",
+            "description": "Card API Documentation"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "Bearer",
+                "in": "header",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "basePath": "/",
+    "paths": {
+        "/cards/{id}":{
+            "put": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "update card",
+                "description": "update card",
+                "parameters": [
+                    {
+                      "in": "path",
+                      "name": "id",
+                      "type": "string",
+                      "required": true
+                    }
+                  ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "titulo": {
+                                        "type": "string"
+                                    },
+                                    "conteudo": {
+                                        "type": "string"
+                                    },
+                                    "lista": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "titulo": "Task XPTO",
+                                    "conteudo": "Desenvolvimento de API",
+                                    "lista": "ToDo"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Error operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "delete card",
+                "description": "delete card",
+                "parameters": [
+                    {
+                      "in": "path",
+                      "name": "id",
+                      "type": "string",
+                      "required": true
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Error operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/cards": {
+            "get": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Get all cards",
+                "description": "Get all cards",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Error operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "insert card",
+                "description": "insert card",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "titulo": {
+                                        "type": "string"
+                                    },
+                                    "conteudo": {
+                                        "type": "string"
+                                    },
+                                    "lista": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "titulo": "Task XPTO",
+                                    "conteudo": "Desenvolvimento de API",
+                                    "lista": "ToDo"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Error operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "Post login",
+                "description": "Post login",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "login": {
+                                        "type": "string"
+                                    },
+                                    "senha": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "login": "letscode",
+                                    "senha": "lets@123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        }
+    },
+    "apis": [
+        "./routers/api/index.js"
+    ]
+}

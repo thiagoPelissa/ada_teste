@@ -14,7 +14,6 @@ const inputValidator = (method) => {
             ]
         }
         case 'updateCard': {
-            console.log('Validaaaaa')
             return [
                 body('titulo').notEmpty().withMessage("O campo titulo é obrigatório"),
                 body('conteudo').notEmpty().withMessage("O campo conteudo é obrigatório"),

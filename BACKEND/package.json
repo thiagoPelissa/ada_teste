@@ -10,12 +10,26 @@
         "build": "rimraf ./build && tsc",
         "start": "npm run build && node build/$npm_package_config_entrypoint",
         "dev": "npm run build && nodemon build/$npm_package_config_entrypoint",
-        "lint": "eslint"
+        "lint": "eslint",
+        "test": "npm run build && jest"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json"
+        ]
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "chalk": "^4.1.2",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
@@ -24,14 +38,19 @@
         "mysql2": "^2.3.3",
         "node-editorconfig": "^1.2.3",
         "sequelize": "^6.21.3",
+        "swagger-jsdoc": "^6.2.5",
+        "swagger-ui-express": "^4.5.0",
         "typescript": "^4.7.4",
         "uuid": "^8.3.2"
     },
     "devDependencies": {
+        "@types/jest": "^28.1.7",
         "@typescript-eslint/eslint-plugin": "^5.33.1",
         "@typescript-eslint/parser": "^5.33.1",
         "eslint": "^8.22.0",
         "eslint-plugin-react": "^7.30.1",
-        "nodemon": "^2.0.7"
+        "jest": "^28.1.3",
+        "nodemon": "^2.0.7",
+        "ts-jest": "^28.0.8"
     }
 }

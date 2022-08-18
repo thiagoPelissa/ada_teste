@@ -1,5 +1,6 @@
 {
-    "jwt_secret": "4ee01ac6a4e44dfaa182e92abbad7f79",
+    "environment": "DEV",
+    "jwt_secret": "admin",
     "default_login": "letscode",
     "default_password": "lets@123",
     "database_name": "ada_db",

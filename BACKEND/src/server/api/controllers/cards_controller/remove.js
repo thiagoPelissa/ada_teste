@@ -9,7 +9,7 @@ const fn = async (req, res) => {
         
         return res.status(200).send(cards);
     } catch (err) {
-        console.log(`Error on list Cards: ${err.message}`);
+        console.error(`Error on list Cards: ${err.message}`);
         return res.status(404).json({ message: 'Bad Request Error' });
     }
 };
