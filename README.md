@@ -1,5 +1,6 @@
 # Backend archtecture
 Projeto desenvolvido com foco no desenvolvimento NodeJS utilizando o padrão de arquitetura `Hexagonal`.
+Para um projeto simples assim não teríamos a necessidade de fazer com ester Pattern, porém foi utilizado para ilustrar.
 <br>
 <b>Nome:</b> `Thiago Pellizzari`
 
